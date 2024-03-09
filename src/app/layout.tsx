@@ -3,13 +3,13 @@ import { Nunito } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
+import RentModal from "@/components/modals/RentModal";
 
 import ToasterProvider from "@/providers/ToasterProvider";
 
 import "./globals.css";
 import ClientOnly from "@/components/ClientOnly";
 import getCurrentUser from "@/actions/getCurrentUser";
-import RentModal from "@/components/modals/RentModal";
 
 export const metadata = {
   title: "Airbnb",

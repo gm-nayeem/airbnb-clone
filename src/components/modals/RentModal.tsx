@@ -13,7 +13,7 @@ import Modal from "./Modal";
 import CategoryInput from "../inputs/CategoryInput";
 import CountrySelect from "../inputs/CountrySelect";
 import Counter from "../inputs/Counter";
-// import ImageUpload from "../inputs/ImageUpload";
+import ImageUpload from "../inputs/ImageUpload";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
 import { categoriesData } from "@/utils/data";
@@ -203,20 +203,20 @@ const RentModal = () => {
     );
   }
 
-  //   if (step === STEPS.IMAGES) {
-  //     bodyContent = (
-  //       <div className="flex flex-col gap-8">
-  //         <Heading
-  //           title="Add a photo of your place"
-  //           subtitle="Show guests what your place looks like!"
-  //         />
-  //         <ImageUpload
-  //           onChange={(value) => setCustomValue("imageSrc", value)}
-  //           value={imageSrc}
-  //         />
-  //       </div>
-  //     );
-  //   }
+  if (step === STEPS.IMAGES) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Add a photo of your place"
+          subtitle="Show guests what your place looks like!"
+        />
+        <ImageUpload
+          onChange={(value) => setCustomValue("imageSrc", value)}
+          value={imageSrc}
+        />
+      </div>
+    );
+  }
 
   if (step === STEPS.DESCRIPTION) {
     bodyContent = (
