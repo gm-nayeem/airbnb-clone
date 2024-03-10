@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-// import ListingCard from "@/components/listings/ListingCard";
+import ListingCard from "@/components/listings/ListingCard";
 import EmptyState from "@/components/EmptyState";
 
 import getListings, { IListingsParams } from "@/actions/getListings";
@@ -38,14 +38,13 @@ const Home = async ({ searchParams }: HomeProps) => {
           gap-8
         "
         >
-          hey, I am from home
-          {/* {listings.map((listing: any) => (
+          {listings.map((listing: any) => (
             <ListingCard
               currentUser={currentUser}
               key={listing.id}
               data={listing}
             />
-          ))} */}
+          ))}
         </div>
       </Container>
     </ClientOnly>
