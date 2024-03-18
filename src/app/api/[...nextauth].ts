@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs"
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
@@ -42,7 +42,7 @@ const login = async (credentials: any) => {
     }
 };
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
     secret: process.env.NEXTAUTH_SECRET,
     providers: [
@@ -74,6 +74,7 @@ export const authOptions: AuthOptions = {
     pages: {
         signIn: '/',
     },
+    debug: process.env.NODE_ENV === 'development',
     session: {
         strategy: "jwt",
     }
